@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #5b207c, #88295d); 
+    font-family: Arial, sans-serif; 
+    color: #fff; 
+    min-height: 100vh;
+    padding: 2rem 1rem; 
+}
+
+/* NAVEGAÇÃO */
+.nav {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem; 
+    background-color: rgba(241, 169, 255, 0.2); 
+    padding: 1rem;
+    border-radius: 50px; 
+    backdrop-filter: blur(5px); 
+    position: sticky; 
+    top: 1rem;
+    z-index: 1000;
+    margin-bottom: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f1a9ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.nav a:hover {
+    color: #fff; 
+}
+
+/*DIVS*/
+main {
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+div[id^="about"], div[id^="projects"], div[id^="contact"] {
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+#about, #projects, #contact{
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo suave para a seção */
+}
+
+.name {
+    font-size: 3em;
+    color: #d7b2e6;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 5px solid #d7b2e6; 
+    display: block;
+    margin: 0 auto 2rem;
+    transition: transform 0.3s ease;
+}
+
+.pic:hover {
+    transform: scale(1.05); 
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #d7b2e6;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #f9ddff;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto; 
+}
+
+/*LAYOUT*/
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left; 
+}
+
+.about-text {
+    flex: 1; 
+    min-width: 300px; /
+}
+
+/*MEDIA*/ 
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+.social-icon {
+    width: 70px;
+    height: 70px;
+    margin-top: 1rem;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
