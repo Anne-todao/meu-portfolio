@@ -46,13 +46,13 @@ main {
     margin: 0 auto; 
 }
 
-div[id^="about"], div[id^="projects"], div[id^="contact"] {
+div[id^="about"], div[id^="projects"], div[id^="contact"], div[id^="habilidades"] {
     padding: 4rem 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
 }
 
-#about, #projects, #contact{
+#about, #projects, #contact, #habilidades {
     background-color: rgba(255, 255, 255, 0.05); /* Fundo suave para a seção */
 }
 
@@ -107,6 +107,61 @@ p {
     flex: 1; 
     min-width: 300px; /
 }
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+
+}
+.card{
+    background: linear-gradient(to bottom, #772ba3, #92377b);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin: 1.75rem;
+    padding: 1rem;
+    width: 10rem;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+.card i{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+}
+.card p{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.card h2{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.fa-html5{
+    color: #E34F26;
+}   
+.fa-css3-alt{
+    color: #1572B6;
+}
+.fa-js{
+    color: #F7DF1E;
+}
+.fa-react{
+    color: #61DAFB;
+}
+.fa-node{
+    color: #339933;
+}
+.fa-database{
+    color: #336791;
+}
+
 
 /*MEDIA*/ 
 
