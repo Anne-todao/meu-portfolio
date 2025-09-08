@@ -173,7 +173,9 @@ footer {
 .fa-node { color: #339933; }
 .fa-database { color: #336791; }
 
-
+.end{
+    display: flex;
+}
 /* --- MEDIA QUERIES (Responsividade) --- */
 @media (max-width: 768px) {
     .nav {
