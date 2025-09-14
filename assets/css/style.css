@@ -1,4 +1,3 @@
-/* --- ESTILOS GERAIS --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +5,25 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #8641ad, #a74a7d); 
-    font-family: Arial, sans-serif; 
-    color: #fff; 
+    background: linear-gradient(to bottom, #8641ad, #a74a7d);
+    font-family: Arial, sans-serif;
+    color: #fff;
     min-height: 100vh;
-    padding: 2rem 1rem; 
-    display: flex; 
+    padding: 2rem 1rem;
+    display: flex;
     flex-direction: column;
-
 }
 
-/* --- NAVEGAÇÃO --- */
 .nav {
     display: flex;
     justify-content: center;
     text-align: center;
-    gap: 2rem; 
-    background-color: rgba(241, 169, 255, 0.2); 
+    gap: 2rem;
+    background-color: rgba(241, 169, 255, 0.2);
     padding: 1rem;
-    border-radius: 50px; 
-    backdrop-filter: blur(5px); 
-    position: sticky; 
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    position: sticky;
     top: 1rem;
     z-index: 1000;
     margin-bottom: 2rem;
@@ -37,56 +34,82 @@ body {
     color: #f1a9ff;
     font-size: 1.5rem;
     font-weight: bold;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
 }
 
 .nav a:hover {
-    color: #fff; 
+    color: #fff;
+     animation: glowing 1.5s infinite;
+}
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px #f1a9ff;
+    }
+    50% {
+        box-shadow: 0 0 20px #f1a9ff, 0 0 30px #d7b2e6;
+    }
+    100% {
+        box-shadow: 0 0 5px #f1a9ff;
+    }
 }
 
-/* --- SEÇÕES PRINCIPAIS --- */
+
 main {
     max-width: 1100px;
     margin: 0 auto;
-    flex-grow: 1;/
+    flex-grow: 1;
 }
 
-
 section {
-    padding: 3rem 10rem;
+    padding: 3rem 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
-    background-color: rgba(255, 255, 255, 0.05); 
-     border: 2px solid #d7b2e6;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #d7b2e6;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 section:hover {
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section {
+    text-align: center;
 }
 
 .name {
     font-size: 3em;
     color: #d7b2e6;
-    text-align: center;
     margin-bottom: 1rem;
 }
 
 .pic {
     width: 200px;
     height: 200px;
-    border-radius: 10%; 
+    border-radius: 10%;
     object-fit: cover;
-    border: 5px solid #d7b2e6; 
+    border: 5px solid #d7b2e6;
     display: block;
     margin: 0 auto 2rem;
     transition: transform 0.3s ease;
 }
 
 .pic:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 h2 {
@@ -96,61 +119,116 @@ h2 {
     text-align: center;
 }
 
-p, .skills {
+#about p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+p {
     font-size: 1.5rem;
     color: #f9ddff;
     text-align: center;
     max-width: 700px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
-#skills p{
-    justify-content: center;
-    align-items: center;
-    padding: 5px 0;
-    border: 2px solid #d7b2e6;
-    margin-bottom: 10px;
-    border-radius: 30px;
+
+.flex-container {
     display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
 }
+
+#about, #skills {
+    flex: 1;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 2rem;
+}
+
+#skills p {
+    padding: 10px 0;
+    border: 2px solid #d7b2e6;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px;
+    text-align: center;
+}
+
+#skills p:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 2rem;
-    gap:3.5rem;
+    gap: 6rem;
 }
 
 .card {
     background: linear-gradient(to bottom, #724a8a, #995087);
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    padding: 1rem;
-    width: 10rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    width: 12rem;
+    height: 14rem;
     text-align: center;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
-
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
-
+    
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-
 
 .card i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.5s ease;
 }
 
-.card h3 { 
-    font-size: 1.2rem;
+.card-title {
+    font-size: 1.6rem; 
     margin-bottom: 0.5rem;
-    color: #d7b2e6; 
+    color: #d7b2e6;
+    transition: all 0.5s ease;
 }
 
-.card p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+.card-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    margin: 0;
+    opacity: 0;
+    font-size: 1.3rem;
+    transition: opacity 0.5s ease;
+}
+
+.card:hover .card-title, .card:hover i {
+    opacity: 0;
+}
+.card:hover .card-description {
+    opacity: 1;
 }
 
 .pics-social {
@@ -168,10 +246,14 @@ p, .skills {
     border-radius: 50%;
 }
 
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.2); 
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .fa-html5 { color: #E34F26;}
@@ -181,19 +263,6 @@ footer {
 .fa-node { color: #339933; }
 .fa-database { color: #336791; }
 
-
-#skills p:hover {
-    background-color: rgba(255, 255, 255, 0.1); 
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-.eu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* --- MEDIA QUERIES (Responsividade) --- */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
@@ -213,7 +282,7 @@ footer {
     h2 {
         font-size: 2rem;
     }
-    
+
     p {
         font-size: 1rem;
     }
@@ -221,5 +290,9 @@ footer {
     .social-icon {
         width: 50px;
         height: 50px;
+    }
+
+    .flex-container {
+        flex-direction: column;
     }
 }
